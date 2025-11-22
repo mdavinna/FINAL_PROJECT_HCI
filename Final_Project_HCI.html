@@ -349,7 +349,9 @@
             </div>
             <div class="search-box">
                 <h3>Search</h3>
-                <input type="text" class="search-input" placeholder="Search">
+                <label>
+                    <input type="text" class="search-input" placeholder="Search">
+                </label>
             </div>
         </div>
     </div>
@@ -410,10 +412,18 @@
             <h3>Contact</h3>
             <div class="contact-box">
                 <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your message!');">
-                    <input type="tel" placeholder="Phone number" required>
-                    <input type="text" placeholder="Instagram" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Some default text to fill some space, and something more so there is more text" required></textarea>
+                    <label>
+                        <input type="tel" placeholder="Phone number" required>
+                    </label>
+                    <label>
+                        <input type="text" placeholder="Instagram" required>
+                    </label>
+                    <label>
+                        <input type="email" placeholder="Email" required>
+                    </label>
+                    <label>
+                        <textarea placeholder="Some default text to fill some space, and something more so there is more text" required></textarea>
+                    </label>
                     <button type="submit">Send Message</button>
                 </form>
             </div>
