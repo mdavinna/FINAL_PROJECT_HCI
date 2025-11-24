@@ -1,0 +1,24 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body{
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: sans-serif, Verdana, sans-serif
+}
+.browser-bar {
+    background: #e0e0e0;
+    padding: 12px 20px;
+    align-items: center;
+}
+.header-container{
+    padding: 20px 40px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
