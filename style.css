@@ -200,7 +200,28 @@ unused
     width: 250px;
     height: 260px;
 }
-
+.cart-container{
+    padding: 10px;
+    justify-content: space-around;
+    margin: 0px 2%;
+}
+.product-cart{
+    width: 800px;
+    height: 100%;
+    background-color: white;
+    border-radius: 12px;
+    margin: 20px 10px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+.product-cart img{
+    width: 100px;
+    height: 100px;
+}
 /* ========items css======== */
 
 /* nothing here yet */
