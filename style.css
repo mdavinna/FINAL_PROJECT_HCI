@@ -1,300 +1,101 @@
-html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100%;
-}
+/* HOME CONTENTS */
 
-body{
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    color: #333;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: sans-serif, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-a{
-    text-decoration: none;
-    color: black;
 
-}
-
-.main-nav{ /*nav design*/
-    height: 100%;
-    background-color: #e1e1e1d8;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-    justify-content: space-between;
-    display: flex;
-    padding: 0 50px 0 20px;
-    position: sticky;
-    top: 1px;
-}
-
-.main-nav h1{
-    font-size: 49px;
-}
-.nav-links ul{
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    font-size: 20px;
-}
-
-.nav-btn {
-    padding: 12px 20px;
-    border: 2px solid #bdc3c7;
-    background: white;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-}
-.nav-btn:hover,
-.cart-btn i:hover {
-    background-color: rgb(184, 184, 184);
-}
-.cart-btn i{
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    font-size: 32px; /*the bigest font before the padding/margin breaks*/
+.hero-container {
+   padding-top: 5rem;
+   display: flex;
+   flex-direction: row;
+   height: 35rem;
+   width: 100%;
+   padding: 0 0rem 0 0rem;
+   border-bottom: 0.08rem solid #000;
+   justify-content: center;
+   gap: 4rem;
 }
 
 
-.basic-container{
-    padding: 20px 40px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin: 30px 9px;
-    border-radius: 12px;
-}
-
-.about-section{
-    display: flex;
-    flex-direction:row;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-}
-
-.img-container{
-    width: 380px;
-}
-
-.img-container img{
-    width: 100%;
-}
-
-.header-text{
-    padding-left: 50px;
-    padding-right: 20px;
-    border: 3px;
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.header-text h3{
-    font-size: 30px;
-}
-.header-text p{
-    font-size: 20px;
+.hero-img {
+   flex: 1;
+   display: flex;
+   justify-content: right;
+   overflow: hidden;
 }
 
 
-/*many contact css bellow*/
-.containers{
-    display: flex;
-    flex-direction: row;
-    margin: 15px 9px;
-}
-.containers div{
-    margin: 3px;
-    height: 30px;
-    padding: 12px 12px;
-    border-radius: 12px;
-    background-color: white;
-    height: 100%;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-}
-.img-container-offers{
-    width: 500px;
+
+
+.hero-img img{
+   width: 150%;
+   height: 150%;
+   object-fit: cover;
+   object-position: 70% 20px;
 }
 
-.img-container-offers img{
-    width: 100%;
-}
-.contact-container{
-    /* nothing */
-}
-.contact-box{
-    border: #333 solid 1px;
+
+.hero-about {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   flex: 1;
 }
 
-.contact-form{
-    display: flex;
-    flex-direction:column;
-    height: 100%;
-}
-.contact-form input{
-    margin: 3px;
-    height: 20px;
-    border-radius: 5px;
-    border: 1px solid;
-    width: 280px;
-}
-.contact-form textarea{
-    margin: 3px;
-    height: 35px;
-    width: 95%;
-    border-radius: 5px;
-    border: 1px solid black;
+
+.hero-about h1 {
+   font-size: 6rem;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus{
-    outline: none;
-    border: 1px solid rgb(26, 150, 227);
+
+.selling-offers{
+   padding: 2rem 1rem 0 1rem;
+   background: #f9fbfc;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   border-bottom: 0.08rem solid #000;
 }
 
-.contact-form button{
-    border-radius: 5px;
-    height: 25px;
-    cursor: pointer;
+
+.selling-offers h1{
+   font-size: 3rem;
 }
 
-/* ========items css======== */
 
-.browser-bar {
-    background: #e0e0e0ec;
-    padding: 12px 20px;
-    align-items: center;
-    margin-top: 1px;
-}
+.selling-items{
+   padding: 0 1rem 2rem 1rem;
+   background: #f9fbfc;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 1rem;
 
-.items-container{
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 0px 2%;
-}
-.product-available{
-    width: 300px;
-    height: 100%;
-    background-color: white;
-    border-radius: 12px;
-    margin: 20px 10px;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 30px;
-}
-.product-available img{
-    width: 250px;
-    height: 260px;
-}
-.cart-container{
-    padding: 10px;
-    justify-content: space-around;
-    margin: 0px 2%;
-}
-.product-cart{
-    width: 800px;
-    height: 100%;
-    background-color: white;
-    border-radius: 12px;
-    margin: 20px 10px;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-    padding: 15px;
-    display: flex;
-    align-items: left;
-    flex-direction: column;
-    padding-bottom: 30px;
-}
-.product-cart img{
-    width: 100px;
-    height: 100px;
+
 }
 
-/* small devices usable */
-@media only screen and (max-width: 750px) {
 
-.main-nav{
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0 20px 0 10px;
-}
-.main-nav h1{
-    padding-left: 50px;
-    font-size: 30px;
-}
-.nav-btn {
-    padding: 13px 14px;
-    border: 2px solid #bdc3c7;
-    background: white;
-    border-radius: 8px;
-    font-size: 14px;
-    cursor: pointer;
-}
-.nav-links ul{
-    gap: 20px;
-}
-.basic-container{
-    padding: 10px 10px;
-}
-.img-container{
-    width: 100%;
-}
-.header-text p{
-    font-size: 15px;
-}
-.containers{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.img-container-offers{
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-}
+.selling-items h3 {
+   font-family: 'oswald';
+   font-size: 2rem;
+   margin: 0 0 2rem;
 }
 
-@media only screen and (max-width: 450px) {
-.about-section{
-    flex-direction:column;
+
+.preview {
+   flex: 1;
+   text-align: center;
+   padding: 0.5rem;
+   min-width: 20rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
 }
-.img-container img{
-    width: 250px;
-}
-.main-nav{
-    padding: 0%;
-}
-.nav-links ul{
-    gap: 10px;
-    font-size: 20px;
-    padding: 0% 20px;
-    justify-content: space-between;
-}
-.header-text{
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 3px;
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.contact-form input{
-    width: 95%;
-}
+
+
+/* Update the image to have limits */
+.preview img {
+   width: 100%;      
+   max-width: 20rem; 
+   height: 20rem;    
+   object-fit: cover;
 }
