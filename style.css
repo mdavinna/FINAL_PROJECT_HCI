@@ -1,3 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Lexend:wght@100..900&family=Oswald:wght@200..700&display=swap');
+
+
+* {
+   margin: 0 0 0 0;
+   padding: 0 0 0 0;
+   box-sizing: border-box;
+}
+
+
+html{
+   overflow-x: hidden;
+}
+body {
+   background: linear-gradient(180deg, #f5f7fa 0%, #c3cfe2 100%);
+   color: #333;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   font-family: 'lexend', sans-serif;
+   width: 100vw;
+   opacity: 0;
+   animation: fadeInPage 0.4s ease-out forwards;
+}
+
+
+@keyframes fadeInPage {
+   0% {
+       opacity: 0;
+       transform: translateY(10px);
+   }
+   100% {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
+
+
+
+
+h1{
+   font-family: 'oswald'
+}
+
+
+/* HEADER & FOOTER */
+
+
+.main-nav {
+   background: #f9fbfc;
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   height: 5rem;
+   justify-content: space-around;
+   padding: 0;
+   align-items: center;
+   border-bottom: 0.08rem solid #000;
+   margin: 0;
+   position: sticky;
+   top: 0;
+   left: 0;
+   z-index: 1000;
+}
+
+
+
+
+.nav-links {
+   height: 100%;
+}
+
+
+.main-nav h1 {
+   font-size: 2.5rem;
+}
+
+
+
+
+.nav-links ul {
+   height: 100%;
+   display: flex;
+   align-items: center;
+   gap: 0;
+   list-style-type: none;
+   font-size: 1.2rem;
+}
+
+
+.nav-links li {
+   height: 100%;
+   display: flex;
+   align-items: center;
+}
+
+
+   /* ——— BUTTONS WHEN INACTIVE ——— */
+.nav-links a {
+   text-decoration: none;
+   color: black;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   padding: 0 1.5rem;  
+   transition: background 0.3s ease;
+}
+
+
+   /* ——— BUTTONS WHEN ACTIVE ——— */
+
+
+.nav-links a.active {
+   background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #c3cfe2 100%);   
+   font-weight: bold;
+}
+
+
+.nav-links a:hover:not(.active) {
+   background-color: rgba(0,0,0,0.03);
+}
+
+
+.hamburger{
+   display: none; /* no borgor */
+}
+
+
+footer{
+   display: flex;
+   justify-content: center;
+   padding: 2rem 0 2rem 0;
+}
+
+
+footer p {
+   color: rgb(0, 0, 0);
+}
+
+
+.client-logo {
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+}
+
+
+.client-logo img {
+   width: 3.5rem;
+   height: 3.5rem;
+}
+
 /* HOME CONTENTS */
 
 
