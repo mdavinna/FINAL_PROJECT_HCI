@@ -338,3 +338,121 @@ function checkout() {
   
     window.location.href = 'payment.html';
 }
+
+
+/* =========================================
+   7. SEND ORDER TO GOOGLE SHEETS (GET METHOD)
+   ========================================= */
+
+   // omg this took hours so we gotta connect the info to google sheets. bcs the client wants full control of who their consumers r!!
+
+function processOrder(event) {
+    event.preventDefault(); 
+    
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz5zNxM41vYmey7FLQ3J_B4BGVQA19pPB94EUMz-FX3vSKTByM1JyWUKJgGspAn1DAC/exec';
+
+    const form = document.getElementById('paymentForm');
+    const submitBtn = document.querySelector('.pay-btn');
+
+    // change button to processinggggg
+    submitBtn.innerText = "Processing...";
+    submitBtn.disabled = true;
+
+    let data = new FormData(form);
+
+    let orderDetails = cart.map(item => `${item.title} (x${item.qty})`).join(", ");
+    
+    let totalElement = document.getElementById("summaryTotal");
+    let totalPriceString = "IDR 0";
+    
+    if (totalElement) {
+        totalPriceString = totalElement.innerText;
+    } else {
+        let calcTotal = 0;
+        cart.forEach(item => {
+            let cleanPrice = parseInt(item.price.replace(/[^0-9]/g, ''));
+            calcTotal += (cleanPrice * item.qty);
+        });
+        totalPriceString = "IDR " + calcTotal.toLocaleString('en-US');
+    }
+
+        // sends data to google sheets
+    data.append("Order Details", orderDetails);
+    data.append("Total Price", totalPriceString);
+
+    const queryString = new URLSearchParams(data).toString();
+
+    fetch(`${scriptURL}?${queryString}`, { method: "GET", mode: "no-cors" })
+        .then(() => {
+            alert("Success! Your order has been recorded. :3");
+            cart = [];
+            saveCart();
+            window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert("Something went wrong.");
+            submitBtn.innerText = "Confirm Payment";
+            submitBtn.disabled = false;
+        });
+}
+
+
+
+/* =========================================
+   8. HELPER: CALCULATE TOTAL FOR PAYMENT PAGE
+   ========================================= */
+
+   // counts the price
+function calculateHiddenTotal() {
+    let totalPrice = 0;
+    
+    cart.forEach(item => {
+        let cleanPrice = parseInt(item.price.replace(/[^0-9]/g, ''));
+        totalPrice += (cleanPrice * item.qty);
+    });
+
+    let totalElement = document.getElementById("summaryTotal");
+    if (totalElement) {
+        totalElement.innerText = "IDR " + totalPrice.toLocaleString('en-US');
+    }
+}
+
+
+
+
+/* =========================================
+   9. HAMBURGER MENU LOGIC 
+   ========================================= */
+
+
+   // so we have a burger menu for mobile users, tablet users dont need it rn
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-links");
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+
+            const icon = hamburger.querySelector("i");
+            if (navMenu.classList.contains("active")) {
+                icon.classList.remove("bx-menu");
+                icon.classList.add("bx-x");
+            } else {
+                icon.classList.remove("bx-x");
+                icon.classList.add("bx-menu");
+            }
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("active");
+                const icon = hamburger.querySelector("i");
+                icon.classList.remove("bx-x");
+                icon.classList.add("bx-menu");
+            });
+        });
+    }
+});

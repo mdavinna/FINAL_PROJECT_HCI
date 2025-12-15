@@ -748,3 +748,119 @@ footer p {
    font-family: 'Lexend', sans-serif;
    cursor: pointer;
 }
+
+
+/* --- PAYMENT STYLE --- */
+
+.breadcrumb {
+    width: 100%;
+    max-width: 50rem; 
+    margin: 2rem auto 1rem auto; 
+    padding: 0 1rem;
+    text-align: left; 
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem; 
+    width: fit-content;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover p {
+    color: #000; 
+    text-decoration: underline;
+}
+
+.breadcrumb a:hover i {
+    color: #000; 
+    text-decoration: none;
+}
+
+.breadcrumb i {
+    font-size: 1.2rem; 
+}
+
+#paymentForm {
+    width: 100%;
+    max-width: 50rem;
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    margin: 2rem auto; 
+}
+
+.form-group h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 0.2rem solid #333;
+    padding-bottom: 0.5rem;
+}
+
+label {
+    display: block; 
+    margin-bottom: 0.5rem;
+    margin-top: 1rem; 
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+input {
+    width: 100%; 
+    padding: 1rem; 
+    border: 0.2rem solid #ddd;
+    background-color: #f9fbfc;
+    
+    font-family: 'Lexend', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #333;
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.05); 
+}
+
+.pay-btn {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: black;
+    color: white;
+    border: none;
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pay-btn:hover {
+    background: #333;
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.pay-btn:active {
+    transform: translateY(0);
+}
+
+.mobile-ui{
+    height: 100%;
+}
+.mobile-popup{
+    height: 100%;
+}
+
